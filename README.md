@@ -1,6 +1,6 @@
 # Graph Algorithms Visualizer
 
-Welcome to the Web Algorithm Visualizer! This web application allows you to explore various graph traversal and path finding algorithms using interactive visualizations. You can access it here: 
+Welcome to the Web Algorithm Visualizer! This web application allows you to explore various graph traversal and path finding algorithms using interactive visualizations.
 
 ## Implemented algorithms
 

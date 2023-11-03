@@ -1,15 +1,15 @@
 # Graph Algorithms Visualizer
 
 Welcome to the Web Algorithm Visualizer! This web application allows you to explore various graph traversal and path finding algorithms using interactive visualizations. It supports the following search algorithms:
-
 1. Breadth-First Search
 3. Bidirectional Search
 2. Depth-First Search
 5. Dijkstra's
 4. A* Search
+You can access the app from this link: 
 
-## Getting Started
-### For local machine
+## Getting Started in local machine
+
 1. cd ./Graph-algorithms-visualizer
 2. npm install
 3. node ./server.js

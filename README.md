@@ -9,12 +9,19 @@ Welcome to the Web Algorithm Visualizer! This web application allows you to expl
 4. A* Search
 
 ## Getting Started
+1. npm install
+2. node ./server.js
+3. Enter the link: http://localhost:3000/
+4. Draw walls or change start, target position
+5. Pick an algorithm
+6. Click "Visualize" button
 
 ### Prerequisites
 
 Before you start using this application, you need to have the following installed:
 
 - Modern web browser (Chrome, Firefox, Safari, etc.)
+- Nodejs and npm
 
 ### Installation
 

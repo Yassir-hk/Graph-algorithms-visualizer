@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <title>Graph Algorithms visualizer</title>
+
+</head>
+
+<body>
+
+  <!-- Header of the page -->
+  <header>
+    <h2 id="logo">Graph Algorithms Visualizer</h2>
+    <nav>
+      <select name="Algorithms" id="algorithms">
+        <option value="bfs">Breadth first search</option>
+        <option value="bid">Bidirectional search</option>
+        <option value="dfs">Depth first search</option>
+        <option value="dij">Dijkstra's</option>
+        <option value="ast">A* search</option>
+      </select>
+      <a id="visualize-button">Visualize</a>
+      <a id="clear-paths-button">Clear paths</a>
+      <a id="restore-grid-button">Restore grid</a>
+    </nav>
+  </header>
+
+  <!-- colors description -->
+  <div id="color-description-container">
+
+    <p class="color-description">
+      <span id="start-node"><img src="assets/img/arrow.png" alt="S"></span>
+      Start node
+    </p>
+
+    <p class="color-description">
+      <span id="target-node"><img src="assets/img/circle.png" alt="T"></span>
+      Target node
+    </p>
+
+    <p class="color-description">
+      <span id="unvisited-node"></span>
+      Unvisited node
+    </p>
+
+    <p class="color-description">
+      <span id="visited-node"></span>
+      Visited node
+    </p>
+    
+    <p class="color-description">
+      <span id="wall-node"></span>
+      Wall node
+    </p>
+    
+    <p class="color-description">
+      <span id="path-node"></span>
+      Path node
+    </p>
+
+  </div>
+
+  <!-- The grid -->
+  <section aria-label="grid-section">
+    <div id="grid"></div>
+  </section>
+
+  <!-- Main script -->
+  <script type="module" src="src/app.js"></script>
+  
+</body>
+
+</html>

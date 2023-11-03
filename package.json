@@ -1,0 +1,24 @@
+{
+  "name": "graph-algorithms-visualizer",
+  "version": "1.0.0",
+  "description": "graph algorithms visualizer application implemented in html, css and javascript",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yassir-hk/Graph-algorithms-visualizer"
+  },
+  "keywords": [
+    "graphs",
+    "algorithms",
+    "data structures",
+    "javascript"
+  ],
+  "author": "Yassir Hakkou",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

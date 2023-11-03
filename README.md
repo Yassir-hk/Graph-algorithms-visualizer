@@ -16,16 +16,10 @@ Welcome to the Web Algorithm Visualizer! This web application allows you to expl
 5. Pick an algorithm
 6. Click "Visualize" button
 
-### Prerequisites
-
-Before you start using this application, you need to have the following installed:
-
-- Modern web browser (Chrome, Firefox, Safari, etc.)
-- Nodejs and npm
-
-### Installation
+## Installation
 
 1. Clone or download the repository to your local machine.
-
    ```bash
    git clone https://github.com/yourusername/web-algorithm-visualizer.git
+2. Modern web browser (Chrome, Firefox, Safari, etc.)
+3. Nodejs and npm

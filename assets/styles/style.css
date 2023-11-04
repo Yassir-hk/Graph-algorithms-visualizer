@@ -57,7 +57,7 @@ nav * {
   display: flex;
   padding: 5px 5px;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -87,7 +87,7 @@ nav * {
 
 #color-description-container {
   height: 5vh;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   justify-content: space-between;
 }
 

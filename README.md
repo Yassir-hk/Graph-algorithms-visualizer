@@ -24,6 +24,6 @@ Welcome to the Web Algorithm Visualizer! This web application allows you to expl
 
 1. Clone or download the repository to your local machine.
    ```bash
-   git clone https://github.com/yourusername/web-algorithm-visualizer.git
+   git clone https://github.com/Yassir-hk/Graph-algorithms-visualizer.git
 2. Modern web browser (Chrome, Brave, ...)
 3. Nodejs and npm

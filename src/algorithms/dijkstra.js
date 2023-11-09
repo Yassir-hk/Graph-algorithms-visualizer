@@ -1,9 +1,9 @@
 import { grid } from "../grid.js";
-import { animateVisitedNode, animatePathNode } from "../utility/utils.js";
 
-export async function dijkstra(adjList, start, target) {
+export function dijkstra(adjList, start, target) {
   const graphSize = adjList.length;
   const nodes = new Map();
+  const animations = [];
 
   // Constructing nodes map to represent all valid nodes to be processed
   for (let i = 0; i < adjList.length; ++i) {
@@ -34,23 +34,23 @@ export async function dijkstra(adjList, start, target) {
 
     // Mark node as visited
     visited.add(current.node);
-    await animateVisitedNode(current.node);
+    animations.push({type: "visited", node: current.node})
 
     // Case of reaching the target node
     if (current.node === target) {
       const path = [];
       let node = target;
 
-      while (node) {
+      while (node !== undefined) {
         path.unshift(node);
         node = nodes.get(node).prev;
       }
 
       for (const node of path) {
-        await animatePathNode(node);
+        animations.push({type: "path", node: node});
       }
 
-      return true;
+      break;
     }
 
     // Explore neighbors nodes and update the cost of the node if necessary
@@ -62,5 +62,5 @@ export async function dijkstra(adjList, start, target) {
     }
   }
 
-  return false;
+  return animations;
 }

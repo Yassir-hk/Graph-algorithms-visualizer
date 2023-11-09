@@ -8,8 +8,8 @@ export const NODE_COLORS = {
 
 export const NODE_ANIMATIONS = {
   "ICONS": "icon-animation 1s",
-  "PATH": "path-node-animation 1.5s linear forwards",
-  "VISITING": "visited-node-animation 2s linear forwards",
+  "PATH": "path-node-animation 1.5s ease-out alternate 1 forwards running",
+  "VISITING": "visited-node-animation 2s ease-out alternate 1 forwards running",
 }
 
 export const NODE_ICONS = {

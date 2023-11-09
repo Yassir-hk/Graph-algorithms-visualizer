@@ -1,5 +1,4 @@
 import { grid } from "../grid.js";
-import { animatePathNode, animateVisitedNode } from "../utility/utils.js";
 
 // Check if two nodes are same
 function areSameNode(a, b) {
@@ -7,7 +6,8 @@ function areSameNode(a, b) {
 }
 
 // Implementation of the bidirectional search algorithm
-export async function bidirectional(adjList, start, target) {
+export function bidirectional(adjList, start, target) {
+  const animations = [];
   const graphSize = adjList.length;
   const agentOneNodes = new Map();
   const agentTwoNodes = new Map();
@@ -43,7 +43,7 @@ export async function bidirectional(adjList, start, target) {
 
     // Mark explored node as visited
     agentOneVisitedNodes.add(agentOneCurrentNode.node);
-    await animateVisitedNode(agentOneCurrentNode.node);
+    animations.push({type: "visited", node: agentOneCurrentNode.node});
 
     // Search for unexplored node with minimum cost for AgentTwo
     for (const [node, infos] of agentTwoNodes) {
@@ -60,7 +60,7 @@ export async function bidirectional(adjList, start, target) {
 
     // Mark explored node as visited
     agentTwoVisitedNodes.add(agentTwoCurrentNode.node);
-    await animateVisitedNode(agentTwoCurrentNode.node);
+    animations.push({type: "visited", node: agentTwoCurrentNode.node});
 
     // Check if there are common visited nodes
     for (const node of agentOneVisitedNodes) {
@@ -88,10 +88,10 @@ export async function bidirectional(adjList, start, target) {
       }
 
       for (const node of path) {
-        await animatePathNode(node);
+        animations.push({type: "path", node: node});
       }
 
-      return true;
+      break;
     }
 
     // Extracting neighbor nodes of AgentOne and update the cost of each of theme if necessary
@@ -111,5 +111,5 @@ export async function bidirectional(adjList, start, target) {
     }
   }
 
-  return false;
+  return animations;
 }

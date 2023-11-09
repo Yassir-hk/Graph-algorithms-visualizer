@@ -2,7 +2,8 @@ import { grid } from "../grid.js";
 import { animateVisitedNode } from "../utility/utils.js";
 
 // Breadth first search algorithms
-export async function breadthFirstSearch(adjList, start, target) {
+export function breadthFirstSearch(adjList, start, target) {
+  const animations = [];
   const queue = [start];
   const visited = new Set();
   
@@ -10,11 +11,11 @@ export async function breadthFirstSearch(adjList, start, target) {
     const current = queue.shift();
 
     visited.add(current);
-    await animateVisitedNode(current);
+    animations.push({type: "visited", node: current});
 
     // Case of reaching the target node
     if (target === current) {
-      return true;
+      break;
     }
 
     // Add the unexplored nodes which they are neighbors to the current node
@@ -26,5 +27,5 @@ export async function breadthFirstSearch(adjList, start, target) {
     }
   }
 
-  return false;
+  return animations;
 }

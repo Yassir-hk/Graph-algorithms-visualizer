@@ -1,19 +1,19 @@
 import { grid } from "../grid.js";
-import { animateVisitedNode } from "../utility/utils.js";
 
-export async function depthFirstSearch(adjList, start, target) {
+export function depthFirstSearch(adjList, start, target) {
   const visited = new Set();
   const stack = [start]
+  const animations = [];
 
   while (stack.length) {
     const current = stack.pop();
 
     visited.add(current);
-    await animateVisitedNode(current);
+    animations.push({type: "visited", node: current})
 
     // Case of reaching the target node
     if (target === current) {
-      return true;
+      break;
     }
 
     // Add unexplored nodes which are neighbors to the current node
@@ -24,5 +24,5 @@ export async function depthFirstSearch(adjList, start, target) {
     }
   }
 
-  return false;
+  return animations;
 }

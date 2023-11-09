@@ -1,5 +1,4 @@
 import { grid } from "../grid.js";
-import { animateVisitedNode, animatePathNode } from "../utility/utils.js";
 
 // Heuristic function that estimate the Manhattan distance from a node to b node
 function distance(a, b) {
@@ -14,9 +13,10 @@ function distance(a, b) {
 }
 
 // Implementation of the A* search algorithm
-export async function astar(adjList, start, target) {
+export function astar(adjList, start, target) {
   const closedList = new Map();
   const openList = new Map();
+  const visualisations = [];
 
   openList.set(start, {
     prev: undefined,
@@ -55,7 +55,7 @@ export async function astar(adjList, start, target) {
     });
 
     // Animate visited node
-    await animateVisitedNode(current.node);
+    visualisations.push({type: "visited", node: current.node});
 
     // Case of reaching the target node
     if (current.node === target) {
@@ -69,10 +69,10 @@ export async function astar(adjList, start, target) {
 
       // Animate path nodes
       for (const node of path) {
-        await animatePathNode(node);
+        visualisations.push({type: "path", node: node});
       }
 
-      return true
+      break;
     }
 
     // Add neighbor nodes
@@ -95,5 +95,5 @@ export async function astar(adjList, start, target) {
     }
   }
 
-  return false;
+  return visualisations;
 }

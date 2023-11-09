@@ -4,9 +4,9 @@ import { NODE_ANIMATIONS, NODE_COLORS, NODE_ICONS } from "./utility/consts.js";
 export const gridElement = document.getElementById("grid");
 
 class Grid {
-  constructor(cols, rows) {
-    this.cols = cols;
-    this.rows = rows;
+  constructor() {
+    this.cols = 60;
+    this.rows = 23;
     this.startNode = this.cols * Math.floor(this.rows / 2) + this.cols * 0.2;
     this.targetNode = this.startNode + this.cols - 2 * (this.startNode % this.cols);
     this.width = gridElement.offsetWidth;
@@ -184,4 +184,4 @@ class Grid {
   }
 }
 
-export const grid = new Grid(55, 23);
+export const grid = new Grid();

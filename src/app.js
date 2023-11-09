@@ -4,6 +4,7 @@ import { dijkstra } from "./algorithms/dijkstra.js";
 import { depthFirstSearch } from "./algorithms/dfs.js";
 import { breadthFirstSearch } from "./algorithms/bfs.js";
 import { bidirectional } from "./algorithms/bidirectional.js";
+import { animate } from "./utility/utils.js";
 
 const visualizeButton = document.getElementById("visualize-button");
 const clearPathsButton = document.getElementById("clear-paths-button");
@@ -39,23 +40,26 @@ visualizeButton.onclick = async () => {
     visualizeButton.style.background = "var(--visualize-button-enabled)";
   };
 
+  let animations;
+
   switch (selectedAlgorithm) {
     case "ast":
-      await astar(adjList, grid.startNode, grid.targetNode);
+      animations = astar(adjList, grid.startNode, grid.targetNode);
       break;
     case "dij":
-      await dijkstra(adjList, grid.startNode, grid.targetNode);
+      animations = dijkstra(adjList, grid.startNode, grid.targetNode);
       break;
     case "bid":
-      await bidirectional(adjList, grid.startNode, grid.targetNode);
+      animations = bidirectional(adjList, grid.startNode, grid.targetNode);
       break;
     case "dfs":
-      await depthFirstSearch(adjList, grid.startNode, grid.targetNode);
+      animations = depthFirstSearch(adjList, grid.startNode, grid.targetNode);
       break;
     case "bfs":
-      await breadthFirstSearch(adjList, grid.startNode, grid.targetNode);
+      animations = breadthFirstSearch(adjList, grid.startNode, grid.targetNode);
   }
 
+  await animate(animations);
   await algorithmCompleted();
 };
 

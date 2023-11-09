@@ -1,6 +1,8 @@
 # Graph Algorithms Visualizer
 
-Welcome to the Web Algorithm Visualizer! This web application allows you to explore various graph traversal and path finding algorithms using interactive visualizations. It supports the following search algorithms:
+Welcome to the Web Algorithm Visualizer! This web application allows you to explore various graph traversal and path finding algorithms using interactive visualizations. You can access it here: https://yassir-hk.github.io/Graph-algorithms-visualizer/
+
+## Implemented algorithms
 
 1. Breadth-First Search
 3. Bidirectional Search
@@ -8,17 +10,20 @@ Welcome to the Web Algorithm Visualizer! This web application allows you to expl
 5. Dijkstra's
 4. A* Search
 
-## Getting Started
+## Getting Started in local machine
 
-### Prerequisites
+1. cd ./Graph-algorithms-visualizer
+2. npm install
+3. node ./server.js
+4. Enter the link: http://localhost:3000/
+5. Draw walls or change start, target position
+6. Pick an algorithm
+7. Click "Visualize" button
 
-Before you start using this application, you need to have the following installed:
-
-- Modern web browser (Chrome, Firefox, Safari, etc.)
-
-### Installation
+## Installation
 
 1. Clone or download the repository to your local machine.
-
    ```bash
-   git clone https://github.com/yourusername/web-algorithm-visualizer.git
+   git clone https://github.com/Yassir-hk/Graph-algorithms-visualizer.git
+2. Modern web browser (Chrome, Brave, ...)
+3. Nodejs and npm

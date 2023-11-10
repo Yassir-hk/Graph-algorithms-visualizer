@@ -1,7 +1,7 @@
 import { grid } from "../grid.js";
 
 // Check if two nodes are same
-function areSameNode(a, b) {
+function areSame(a, b) {
   return a !== undefined && b !== undefined && a === b;
 }
 
@@ -72,7 +72,7 @@ export function bidirectional(adjList, start, target) {
     }
 
     // Case of finding a common node
-    if (areSameNode(agentOneCurrentNode.node, agentTwoCurrentNode.node)) {
+    if (areSame(agentOneCurrentNode.node, agentTwoCurrentNode.node)) {
       let node = agentOneCurrentNode.node;
       const path = [];
 

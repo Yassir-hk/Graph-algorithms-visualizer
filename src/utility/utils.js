@@ -29,11 +29,23 @@ export function animatePathNode(id) {
 }
 
 // Function that takes a list of visualizations and apply theme
-export async function animate(visualisations) {
-  for (const visualisation of visualisations) {
-    if (visualisation.type === "visited")
-      await animateVisitedNode(visualisation.node);
-    else
-      await animatePathNode(visualisation.node);
+export async function animate(animations) {
+  for (const animation of animations) {
+    if (animation.type === "visited") {
+      await animateVisitedNode(animation.node);
+    } else {
+      await animatePathNode(animation.node);
+    }
+  }
+}
+
+// Animate the result of the bidirectional algorithm
+export async function animateBidirectional(animations) {
+  for (let i = 1; i < animations.length; ++i) {
+    if (animations[i].type === "visited") {
+      await animateTwoVisitedNodes(animations[i].node, animations[i - 1].node);
+    } else {
+      await animatePathNode(animations[i].node);
+    }
   }
 }

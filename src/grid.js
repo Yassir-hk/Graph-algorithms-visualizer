@@ -5,12 +5,12 @@ export const gridElement = document.getElementById("grid");
 
 class Grid {
   constructor() {
-    this.cols = 60;
-    this.rows = 23;
-    this.startNode = this.cols * Math.floor(this.rows / 2) + this.cols * 0.2;
+    this.cols = 55;
+    this.rows = 21;
+
+    this.startNode = this.cols * Math.floor(this.rows / 2) + Math.floor(this.cols * 0.25);
     this.targetNode = this.startNode + this.cols - 2 * (this.startNode % this.cols);
-    this.width = gridElement.offsetWidth;
-    this.height = gridElement.offsetHeight;
+
     this.isActivatedDrawing = false;
     this.wallNodes = new Set();
     this.pickedIcon = null;
@@ -120,10 +120,8 @@ class Grid {
     // Add start node and target node icons
     if (this.startNode === id) {
       node.innerHTML = NODE_ICONS.START;
-      node.firstChild.style.animation = NODE_ANIMATIONS.ICONS;
     } else if (this.targetNode === id) {
       node.innerHTML = NODE_ICONS.TARGET;
-      node.firstChild.style.animation = NODE_ANIMATIONS.ICONS;
     }
 
     // Drag drop event
@@ -174,12 +172,13 @@ class Grid {
   // Function to restore all default configs
   restore() {
     this.clear();
-    this.startNode = this.cols * (Math.floor(this.rows / 2) + 0.2);
+
+    this.startNode = this.cols * Math.floor(this.rows / 2) + Math.floor(this.cols * 0.25);
     this.targetNode = this.startNode + this.cols - 2 * (this.startNode % this.cols);
+    
     this.wallNodes = new Set();
     this.isActivatedDrawing = false;
-    this.width = gridElement.offsetWidth;
-    this.height = gridElement.offsetHeight;
+    
     this.draw();
   }
 }

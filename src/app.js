@@ -4,7 +4,7 @@ import { dijkstra } from "./algorithms/dijkstra.js";
 import { depthFirstSearch } from "./algorithms/dfs.js";
 import { breadthFirstSearch } from "./algorithms/bfs.js";
 import { bidirectional } from "./algorithms/bidirectional.js";
-import { animate } from "./utility/utils.js";
+import { animate, animateBidirectional } from "./utility/utils.js";
 
 const visualizeButton = document.getElementById("visualize-button");
 const clearPathsButton = document.getElementById("clear-paths-button");
@@ -41,6 +41,7 @@ visualizeButton.onclick = async () => {
   };
 
   let animations;
+  let isBidirectional = false;
 
   switch (selectedAlgorithm) {
     case "ast":
@@ -51,6 +52,7 @@ visualizeButton.onclick = async () => {
       break;
     case "bid":
       animations = bidirectional(adjList, grid.startNode, grid.targetNode);
+      isBidirectional = true;
       break;
     case "dfs":
       animations = depthFirstSearch(adjList, grid.startNode, grid.targetNode);
@@ -59,7 +61,7 @@ visualizeButton.onclick = async () => {
       animations = breadthFirstSearch(adjList, grid.startNode, grid.targetNode);
   }
 
-  await animate(animations);
+  isBidirectional ? await animateBidirectional(animations) : await animate(animations);
   await algorithmCompleted();
 };
 

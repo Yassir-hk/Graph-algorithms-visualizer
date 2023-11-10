@@ -6,7 +6,7 @@ export const gridElement = document.getElementById("grid");
 class Grid {
   constructor() {
     this.cols = 55;
-    this.rows = 21;
+    this.rows = 25;
 
     this.startNode = this.cols * Math.floor(this.rows / 2) + Math.floor(this.cols * 0.25);
     this.targetNode = this.startNode + this.cols - 2 * (this.startNode % this.cols);

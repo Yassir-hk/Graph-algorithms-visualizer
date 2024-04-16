@@ -149,8 +149,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid var(--grid-border);
-  border-bottom: 1px solid var(--grid-border);
+  border: 1px solid var(--grid-border);
 }
 
 /* Animations */
